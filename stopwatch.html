@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stopwatch</title>
+  <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhxfER4kG-uZIWGpUJKhEhTarUNQYmOSeIFw&s" type="image/x-icon">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #008080, #20b2aa);
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+    }
+
+    
+    .container {
+      margin-top: 50px;
+    }
+
+    .timer-display {
+      font-size: 60px;
+      margin-bottom: 40px;
+    }
+
+    .button-container {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+
+    .btn {
+      background-color: #004d4d;
+      border: none;
+      color: white;
+      padding: 12px 24px;
+      margin: 10px;
+      font-size: 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #006666;
+    }
+  </style>
+</head>
+<body>
+
+  
+
+  <div class="container">
+    <div id="count" class="timer-display">0</div>
+
+    <div class="button-container">
+      <button class="btn" onclick="Start()">Start</button>
+      <button class="btn" onclick="Stop()">Stop</button>
+      <button class="btn" onclick="Restart()">Restart</button>
+    </div>
+  </div>
+
+  <script>
+    let count = 0;
+    let intervalId = null;
+
+    function Start() {
+      if (intervalId === null) {
+        intervalId = setInterval(() => {
+          document.getElementById("count").innerText = ++count;
+        }, 1000);
+      }
+    }
+
+    function Stop() {
+      clearInterval(intervalId);
+      intervalId = null;
+    }
+
+    function Restart() {
+      Stop();
+      count = 0;
+      document.getElementById("count").innerText = count;
+      Start();
+    }
+  </script>
+</body>
+</html>

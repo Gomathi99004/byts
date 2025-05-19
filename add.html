@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add Two Numbers</title>
+  <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhxfER4kG-uZIWGpUJKhEhTarUNQYmOSeIFw&s" type="image/x-icon">
+  
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #6a1b9a, #9c27b0);
+      color: white;
+      text-align: center;
+    }
+
+    .nav-container {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .nav-container ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .nav-container li {
+      display: inline;
+    }
+
+    .nav-container a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .nav-container a:hover {
+      color: #ffeb3b;
+    }
+
+    .form-container {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 40px;
+      border-radius: 12px;
+      display: inline-block;
+      margin-top: 60px;
+    }
+
+    label {
+      font-size: 18px;
+    }
+
+    input[type="number"] {
+      padding: 8px;
+      margin: 10px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: none;
+      width: 200px;
+    }
+
+    .btn {
+      background-color: #4a148c;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      margin-top: 20px;
+      font-size: 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .btn:hover {
+      background-color: #7b1fa2;
+      transform: scale(1.05);
+    }
+
+    #output {
+      margin-top: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #fffde7;
+    }
+  </style>
+</head>
+
+<body>
+
+ 
+  <center>
+    <div class="form-container">
+      <h2>Add Two Numbers</h2>
+      <label for="num1">Enter number 1:</label><br>
+      <input type="number" id="num1" name="num1"><br><br>
+
+      <label for="num2">Enter number 2:</label><br>
+      <input type="number" id="num2" name="num2"><br><br>
+
+      <button class="btn" onclick="add()">Sum</button>
+      <p id="output"></p>
+    </div>
+  </center>
+
+  <!-- JavaScript -->
+  <script>
+    function add() {
+      const A = parseInt(document.getElementById("num1").value) || 0;
+      const B = parseInt(document.getElementById("num2").value) || 0;
+      const sum = A + B;
+      document.getElementById("output").innerText = "Sum: " + sum;
+    }
+  </script>
+
+</body>
+</html>

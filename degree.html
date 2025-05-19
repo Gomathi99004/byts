@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fahrenheit to Celsius Converter</title>
+  <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhxfER4kG-uZIWGpUJKhEhTarUNQYmOSeIFw&s" type="image/x-icon">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #283e51, #485563);
+      color: #fff;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.2);
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid #ccc;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      display: inline;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px 16px;
+      border: 2px solid #fff;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      background-color: #fff;
+      color: #283e51;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 60px auto;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
+    label {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    input[type="number"] {
+      padding: 10px;
+      width: 60%;
+      border-radius: 6px;
+      border: none;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 10px 25px;
+      font-size: 16px;
+      background-color: #4db6ac;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #00796b;
+    }
+
+    #output {
+      margin-top: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #ffe082;
+    }
+  </style>
+</head>
+<body>
+  
+
+  <div class="container">
+    <h2>🌡️ Fahrenheit to Celsius Converter</h2>
+    <label for="num">Enter temperature in Fahrenheit:</label><br/>
+    <input type="number" id="num" name="num" /><br/>
+    <button class="btn" onclick="degree()">Convert</button>
+    <p id="output"></p>
+  </div>
+
+  <script>
+    function degree() {
+      var valEle = document.getElementById("num").value;
+      var a = parseFloat(valEle);
+      var c = (a - 32) * 5 / 9;
+      document.getElementById("output").innerText = c.toFixed(2) + " °C";
+    }
+  </script>
+</body>
+</html>
